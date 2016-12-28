@@ -34,9 +34,9 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 
+var oneDay = 86400000
 
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
 
 app.use('/', index);
 app.use('/users', users);
