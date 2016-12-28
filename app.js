@@ -31,6 +31,10 @@ app.use(require('node-sass-middleware')({
   indentedSyntax: true,
   sourceMap: true
 }));
+app.use(helmet())
+app.use(compression())
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
