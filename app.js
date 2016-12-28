@@ -4,6 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var bcrypt = require('bcryptjs');
+var helmet = require('helmet');
+var compression = require('compression');
+var sessions = require('client-sessions');
+var csurf = require('csurf');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
